@@ -11,3 +11,5 @@ Het formulier opent het e mailprogramma van de bezoeker. Het verstuurt niet zelf
 Controleer de wettelijke regels voor oppaswerk door 15 jarigen en betrek een ouder of verzorger bij de afspraken.
 
 Voor Google Search Console: voeg oppasmaastricht.nl toe en verifieer het domein via DNS in Cloudflare. De website heeft al een paginatitel en metabeschrijving.
+
+Contacttekst aangepast. Er staat geen openbaar telefoonnummer op de website. Het formulier gebruikt nog steeds een e mailprogramma en vereist een ingesteld CONTACT_EMAIL in contact.js.
