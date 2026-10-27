@@ -1,15 +1,21 @@
-Oppasservice Maastricht
+OPPASSERVICE MAASTRICHT | RECHTSTREEKS CONTACTFORMULIER
 
-Upload index.html, style.css, contact.js en de volledige map images naar dezelfde locatie in GitHub.
+Dit pakket bevat een Cloudflare Worker en de volledige website.
+De website toont info@oppasmaastricht.nl en heeft een optioneel telefoonveld.
+Het formulier verstuurt rechtstreeks naar de Worker en opent geen mailprogramma.
 
-BELANGRIJK: Stel het ontvangstadres in contact.js in:
-const CONTACT_EMAIL = "jullieadres@voorbeeld.nl";
+LET OP: verzending werkt pas NA onderstaande configuratie. Cloudflare Email Routing alleen kan geen mail verzenden.
 
-Gebruik een adres dat ook door een ouder of verzorger wordt beheerd.
-Het formulier opent het e mailprogramma van de bezoeker. Het verstuurt niet zelfstandig en werkt alleen als er een e mailprogramma is ingesteld. Voor een echt online formulier zonder e mailprogramma is een formulierdienst of een backend nodig.
+1. Maak een account aan bij Resend (resend.com). Voeg oppasmaastricht.nl als verzenddomein toe en verifieer de door Resend gevraagde DNS records in Cloudflare. Bewaar de bestaande Cloudflare Email Routing MX records. Resend vraagt doorgaans aparte SPF/DKIM records voor verzenden. Controleer dat alle DNS records correct zijn.
+2. Maak in Resend een API key met rechten om e-mails te versturen.
+3. Zet de bestanden in je GitHub repository. De map public bevat de website; worker.js en wrangler.toml staan in de hoofdmap.
+4. Stel in Cloudflare Worker oppas een secret in met de exacte naam RESEND_API_KEY en als waarde je Resend API key. Plaats de sleutel nooit in GitHub.
+5. Deploy deze repository als Cloudflare Worker met Wrangler (bijvoorbeeld npx wrangler deploy). Controleer dat je bestaande custom domain oppasmaastricht.nl aan Worker oppas blijft gekoppeld. Als GitHub auto deploy is ingesteld, controleer de build/deploy instellingen; het uploaden van bestanden alleen is niet altijd voldoende.
+6. Test met een echt ingevuld formulier en controleer de ontvangende mailbox en eventuele spammap. Test ook rechtstreeks mail naar info@oppasmaastricht.nl.
 
-Controleer de wettelijke regels voor oppaswerk door 15 jarigen en betrek een ouder of verzorger bij de afspraken.
+VERZENDADRES: aanvragen@oppasmaastricht.nl (geverifieerd domein vereist)
+ONTVANGSTADRES: info@oppasmaastricht.nl (Cloudflare Email Routing)
 
-Voor Google Search Console: voeg oppasmaastricht.nl toe en verifieer het domein via DNS in Cloudflare. De website heeft al een paginatitel en metabeschrijving.
+Als de secret of verzendservice niet is ingesteld, toont het formulier een foutmelding en wordt de aanvraag NIET verzonden. De bezoeker kan dan rechtstreeks mailen naar info@oppasmaastricht.nl.
 
-Contacttekst aangepast. Er staat geen openbaar telefoonnummer op de website. Het formulier gebruikt nog steeds een e mailprogramma en vereist een ingesteld CONTACT_EMAIL in contact.js.
+Voor veiligheid: houd toegang tot de mailbox bij een ouder of verzorger. Verwerk aanvragen alleen voor oppasafspraken. Het honeypot veld helpt beperkt tegen spam; voeg bij veel spam Cloudflare Turnstile of rate limiting toe. Publiceer een passend privacybeleid voordat je persoonsgegevens verzamelt.
