@@ -29,3 +29,8 @@ footer{border-top:1px solid var(--line);padding:27px 0}.footer{display:flex;alig
 /* Footer uses the same compact wordmark as the header. */
 .footer-logo img{width:240px;max-width:100%;height:auto;max-height:none;object-fit:contain}
 @media(max-width:520px){.footer-logo img{width:210px}}
+
+.form-intro{margin:0 0 20px;color:var(--muted);font-size:.88rem}
+.form-status{font-size:.83rem;font-weight:600;color:var(--ink);margin:12px 0}
+.form input:focus-visible,.form textarea:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid #9cae9b;outline-offset:3px}
+@media(max-width:520px){.price-list>div{gap:8px}.price-list span{font-size:.8rem}.price-list strong{font-size:.85rem}}
