@@ -21,3 +21,7 @@ footer{border-top:1px solid var(--line);padding:27px 0}.footer{display:flex;alig
 .footer-logo img{display:block;width:190px;height:auto;max-height:105px;object-fit:contain;object-position:left center}
 @media(max-width:850px){.brand-logo{flex:0 1 245px}.brand-logo img{max-height:52px}}
 @media(max-width:520px){.nav{gap:9px;height:70px}.brand-logo{flex:1 1 auto}.brand-logo img{width:100%;max-width:220px;max-height:48px}.nav-cta{flex:0 0 auto;padding:9px 12px;font-size:.72rem}.footer-logo img{width:160px}}
+
+/* Header: uitsluitend woordmerk; volledig stadslogo blijft in footer. */
+.brand-logo img{width:min(100%,290px);max-height:62px;height:auto}
+@media(max-width:520px){.brand-logo img{max-width:220px;max-height:50px}}
