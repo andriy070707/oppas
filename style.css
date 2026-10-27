@@ -14,3 +14,10 @@ footer{border-top:1px solid var(--line);padding:27px 0}.footer{display:flex;alig
 @media(max-width:520px){.container{width:calc(100% - 28px)}.nav-cta{font-size:.78rem;padding:10px 14px}.hero h1{font-size:3.1rem}.actions{flex-direction:column}.btn{width:100%}.hero-portraits{gap:9px;padding-left:0}.hero-person img{height:300px;border-radius:100px 100px 15px 15px}.hero-person.veronica{transform:translateX(8px)}.hero-person.michelle{transform:none;margin-top:28px}.badge{bottom:43px;left:50%;padding:10px 13px}.badge strong{font-size:1.5rem}.service-grid{grid-template-columns:1fr}.section{padding:75px 0}.footer{flex-direction:column;align-items:flex-start}}
 
 .price-list{max-width:540px;margin:22px 0}.price-list>div{display:flex;justify-content:space-between;align-items:baseline;gap:15px;padding:10px 0;border-bottom:1px solid #c4cec4}.price-list span{font-size:.92rem}.price-list strong{white-space:nowrap;font-size:1rem}
+
+/* Responsive logo */
+.brand-logo{display:flex;align-items:center;flex:0 1 290px;min-width:0}
+.brand-logo img{display:block;width:min(100%,290px);height:auto;max-height:57px;object-fit:contain;object-position:left center}
+.footer-logo img{display:block;width:190px;height:auto;max-height:105px;object-fit:contain;object-position:left center}
+@media(max-width:850px){.brand-logo{flex:0 1 245px}.brand-logo img{max-height:52px}}
+@media(max-width:520px){.nav{gap:9px;height:70px}.brand-logo{flex:1 1 auto}.brand-logo img{width:100%;max-width:220px;max-height:48px}.nav-cta{flex:0 0 auto;padding:9px 12px;font-size:.72rem}.footer-logo img{width:160px}}
