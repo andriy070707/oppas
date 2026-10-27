@@ -25,3 +25,7 @@ footer{border-top:1px solid var(--line);padding:27px 0}.footer{display:flex;alig
 /* Header: uitsluitend woordmerk; volledig stadslogo blijft in footer. */
 .brand-logo img{width:min(100%,290px);max-height:62px;height:auto}
 @media(max-width:520px){.brand-logo img{max-width:220px;max-height:50px}}
+
+/* Footer uses the same compact wordmark as the header. */
+.footer-logo img{width:240px;max-width:100%;height:auto;max-height:none;object-fit:contain}
+@media(max-width:520px){.footer-logo img{width:210px}}
